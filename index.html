@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Registration Form</title>
+    <style>
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      form {
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        padding: 20px;
+        margin: 0 auto;
+      }
+
+      fieldset {
+        border: none;
+        margin-bottom: 20px;
+        padding: 0;
+      }
+
+      h2 {
+        color: #444;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 5px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+        font-weight: bold;
+      }
+
+      input,
+      textarea,
+      select,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        width: auto;
+        margin-right: 10px;
+      }
+
+      button {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background: #0056b3;
+      }
+
+      button[type="reset"] {
+        background: #dc3545;
+      }
+
+      button[type="reset"]:hover {
+        background: #a71d2a;
+      }
+
+      #terms {
+        width: auto;
+      }
+
+      .terms-label {
+        display: inline;
+        color: #555;
+      }
+
+      /* Styles for Gender Options */
+      #gender-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      /* Styles for Table */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+
+      }
+
+      table th,
+      table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      /* Fix Input Fields Inside Table */
+      table td input[type="text"],
+      table td input[type="number"],
+      table td input[type="file"] {
+        width: 95%;
+        /* Adjust width within cell */
+        margin: 0;
+      }
+
+      /* Side-by-Side Checkboxes */
+      .checkbox-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .checkbox-container label {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Registration Form</h1>
+    <form action="">
+      <fieldset>
+        <h2>Personal Information</h2>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+        <label for="fname">Father's Name</label>
+        <input type="text" name="fname" id="fname" required>
+        <label for="mname">Mother's Name</label>
+        <input type="text" name="mname" id="mname" required>
+        <label for="phone">Phone Number</label>
+        <input type="text" name="phone" id="phone" required>
+        <label for="date">Date of Birth</label>
+        <input type="date" name="date" id="date" required>
+        <label for="gender">Gender</label>
+        <div id="gender-container">
+          <input type="radio" name="gender" id="male" required>
+          <label for="male">Male</label>
+          <input type="radio" name="gender" id="female" required>
+          <label for="female">Female</label>
+        </div>
+        <label for="address">Address</label>
+        <textarea name="address" id="address"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <h2>Educational Qualification</h2>
+        <label>(i) Primary and Secondary Education</label>
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>School Name</th>
+              <th>Year of Passing</th>
+              <th>Percentage</th>
+              <th>Subjects Studied</th>
+              <th>Upload Certificate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10th</td>
+              <td><input type="text" name="school_10" required></td>
+              <td><input type="number" name="year_10" required></td>
+              <td><input type="number" step="0.01" name="percentage_10" required></td>
+              <td>
+                <div class="checkbox-container">
+                  <input type="checkbox" name="science" id="science">
+                  <label for="science">Science</label>
+                  <input type="checkbox" name="maths" id="maths">
+                  <label for="maths">Maths</label>
+                  <input type="checkbox" name="sst" id="sst">
+                  <label for="sst">SST</label>
+                  <input type="checkbox" name="english" id="english">
+                  <label for="english">English</label>
+                  <input type="checkbox" name="hindi" id="hindi">
+                  <label for="hindi">Hindi</label>
+                  <input type="checkbox" name="regional" id="regional">
+                  <label for="regional">Regional</label>
+                </div>
+              </td>
+              <td>
+                <input type="file" name="file" value="Upload 10th Certificate">
+              </td>
+            </tr>
+            <tr>
+              <td>12th</td>
+              <td><input type="text" name="school_12" required></td>
+              <td><input type="number" name="year_12" required></td>
+              <td><input type="number" step="0.01" name="percentage_12" required></td>
+              <td>
+                <div class="checkbox-container">
+                  <input type="checkbox" name="science" id="science12">
+                  <label for="science12">Science</label>
+                  <input type="checkbox" name="commerce" id="commerce">
+                  <label for="commerce">Commerce</label>
+                  <input type="checkbox" name="humanities" id="humanities">
+                  <label for="humanities">Humanities</label>
+                </div>
+              </td>
+              <td>
+                <input type="file" name="file" value="Upload 12th Certificate">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <label>(ii) Higher Education</label><br>
+        <select name="department" id="department">
+          <option value="none" selected>Select your department</option>
+          <option value="cs">CSE</option>
+          <option value="vocation">Vocation</option>
+          <option value="commerce">B.Com</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms" class="terms-label">I agree to the terms and conditions.</label>
+      </fieldset>
+
+      <fieldset>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </fieldset>
+    </form>
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector("form");
+        const nameInput = document.getElementById("name");
+        const phoneInput = document.getElementById("phone");
+        const termsCheckbox = document.getElementById("terms");
+        const submitButton = form.querySelector('button[type="submit"]');
+
+        // Initially disable submit button
+        submitButton.disabled = true;
+
+        // Enable/Disable submit button based on terms and conditions
+        termsCheckbox.addEventListener("change", () => {
+          submitButton.disabled = !termsCheckbox.checked;
+        });
+
+        // Form validation
+        form.addEventListener("submit", (event) => {
+          let isValid = true;
+          let errorMessage = "";
+
+          // Name validation
+          const nameRegex = /^[a-zA-Z\s]+$/; // Only letters and spaces
+          if (!nameRegex.test(nameInput.value)) {
+            isValid = false;
+            errorMessage += "Name must contain only letters and spaces.\n";
+          }
+
+          // Phone validation
+          const phoneRegex = /^\d{10}$/; // Exactly 10 digits
+          if (!phoneRegex.test(phoneInput.value)) {
+            isValid = false;
+            errorMessage += "Phone number must be exactly 10 digits.\n";
+          }
+
+          // Required fields validation
+          const requiredFields = form.querySelectorAll("[required]");
+          requiredFields.forEach((field) => {
+            if (!field.value.trim()) {
+              isValid = false;
+              errorMessage += `Please fill the ${field.previousElementSibling.textContent.trim()} field.\n`;
+            }
+          });
+
+          // If validation fails, prevent form submission and show alert
+          if (!isValid) {
+            event.preventDefault(); // Prevent form submission
+            alert(errorMessage);
+          }
+        });
+      });
+    </script>
+
+  </body>
+
+</html>
